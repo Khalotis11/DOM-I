@@ -46,7 +46,23 @@ let navigation = document.querySelectorAll('nav a')
 for (let i=0; i<navigation.length; i++){
   navigation[i].textContent = siteContent['nav'][`nav-item-${i + 1}`];
   navigation[i].style.color = 'green';
-}
+};
+
+let navBar = document.querySelector('nav');
+let firstItem = document.createElement('a');
+let lastItem = document.createElement('a');
+
+firstItem.href = '#';
+firstItem.textContent = 'First';
+firstItem.style.color = 'green';
+
+lastItem.href = '#';
+lastItem.textContent = 'Last';
+lastItem.style.color = 'green';
+
+navBar.prepend(firstItem);
+navBar.append(lastItem);
+
 
 // CTA Content
 let ctaContent = document.querySelector('.cta-text h1')
